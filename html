@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krishna Enterprise</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="container">
+        <h1>Krishna Enterprise Product List</h1>
+        <div id="product-list"></div>
+    </div>
+
+    <script>
+        const productData = [
+            { category: "Seasoning Masala", items: ["Chat Masala", "Peri Peri", "Maggi Masala"] },
+            { category: "Instant Shake", items: ["Strawberry Shake", "Mango Shake"] }
+            // Aap aur bhi items yahan add kar sakte hain
+        ];
+
+        const container = document.getElementById('product-list');
+        productData.forEach(section => {
+            const div = document.createElement('div');
+            div.className = 'category-block';
+            div.innerHTML = `<h2>${section.category}</h2><ul>${section.items.map(i => `<li>${i}</li>`).join('')}</ul>`;
+            container.appendChild(div);
+        });
+    </script>
+</body>
+</html>
